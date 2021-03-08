@@ -18,6 +18,8 @@
 		9BC71C7125F67374004A985C /* DogSwordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C7025F67374004A985C /* DogSwordUITests.swift */; };
 		9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C9825F67803004A985C /* SearchViewController.swift */; };
 		9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C9D25F67884004A985C /* DetailViewController.swift */; };
+		9BC71CAD25F67F4A004A985C /* DogsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71CAC25F67F4A004A985C /* DogsDataService.swift */; };
+		9BC71CC125F6821C004A985C /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71CC025F6821C004A985C /* Breed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		9BC71C7225F67374004A985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BC71C9825F67803004A985C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9BC71C9D25F67884004A985C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9BC71CAC25F67F4A004A985C /* DogsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsDataService.swift; sourceTree = "<group>"; };
+		9BC71CC025F6821C004A985C /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +123,9 @@
 		9BC71C4D25F67373004A985C /* DogSword */ = {
 			isa = PBXGroup;
 			children = (
+				9BC71CAB25F67ED1004A985C /* DataServices */,
 				9BC71CA725F67E23004A985C /* Models */,
 				9BC71C8925F676FE004A985C /* ViewControllers */,
-				9BC71C4E25F67373004A985C /* AppDelegate.swift */,
 				9BC71C5025F67373004A985C /* SceneDelegate.swift */,
 				9BC71C5425F67373004A985C /* Main.storyboard */,
 				9BC71C5725F67374004A985C /* Assets.xcassets */,
@@ -155,6 +159,7 @@
 				9BC71C5225F67373004A985C /* ListViewController.swift */,
 				9BC71C9825F67803004A985C /* SearchViewController.swift */,
 				9BC71C9D25F67884004A985C /* DetailViewController.swift */,
+				9BC71C4E25F67373004A985C /* AppDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,8 +167,17 @@
 		9BC71CA725F67E23004A985C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9BC71CC025F6821C004A985C /* Breed.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9BC71CAB25F67ED1004A985C /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				9BC71CAC25F67F4A004A985C /* DogsDataService.swift */,
+			);
+			path = DataServices;
 			sourceTree = "<group>";
 		};
 		F34740868A62E5FB3D13F3E6 /* Frameworks */ = {
@@ -349,7 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC71C5325F67373004A985C /* ListViewController.swift in Sources */,
+				9BC71CC125F6821C004A985C /* Breed.swift in Sources */,
 				9BC71C4F25F67373004A985C /* AppDelegate.swift in Sources */,
+				9BC71CAD25F67F4A004A985C /* DogsDataService.swift in Sources */,
 				9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */,
 				9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */,
 				9BC71C5125F67373004A985C /* SceneDelegate.swift in Sources */,
