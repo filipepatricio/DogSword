@@ -1,13 +1,14 @@
 //
 //  ViewController.swift
 //  DogSword
+
 //
 //  Created by Filipe Patricio on 08/03/2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

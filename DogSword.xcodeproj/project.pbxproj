@@ -3,19 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		31167118E96FC25CC6729FE8 /* Pods_DogSword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E9193AAB57F07BC0D3B8A /* Pods_DogSword.framework */; };
 		9BC71C4F25F67373004A985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C4E25F67373004A985C /* AppDelegate.swift */; };
 		9BC71C5125F67373004A985C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C5025F67373004A985C /* SceneDelegate.swift */; };
-		9BC71C5325F67373004A985C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C5225F67373004A985C /* ViewController.swift */; };
+		9BC71C5325F67373004A985C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C5225F67373004A985C /* ListViewController.swift */; };
 		9BC71C5625F67373004A985C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC71C5425F67373004A985C /* Main.storyboard */; };
 		9BC71C5825F67374004A985C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC71C5725F67374004A985C /* Assets.xcassets */; };
 		9BC71C5B25F67374004A985C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC71C5925F67374004A985C /* LaunchScreen.storyboard */; };
 		9BC71C6625F67374004A985C /* DogSwordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C6525F67374004A985C /* DogSwordTests.swift */; };
 		9BC71C7125F67374004A985C /* DogSwordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C7025F67374004A985C /* DogSwordUITests.swift */; };
+		9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C9825F67803004A985C /* SearchViewController.swift */; };
+		9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C9D25F67884004A985C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,7 @@
 		9BC71C4B25F67373004A985C /* DogSword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogSword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC71C4E25F67373004A985C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC71C5025F67373004A985C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BC71C5225F67373004A985C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BC71C5225F67373004A985C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9BC71C5525F67373004A985C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BC71C5725F67374004A985C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BC71C5A25F67374004A985C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		9BC71C6C25F67374004A985C /* DogSwordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogSwordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC71C7025F67374004A985C /* DogSwordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwordUITests.swift; sourceTree = "<group>"; };
 		9BC71C7225F67374004A985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC71C9825F67803004A985C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9BC71C9D25F67884004A985C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,6 @@
 				3553AC0CCFBEB055964903AA /* Pods-DogSword.debug.xcconfig */,
 				86C72C562E0DB484FB0B466A /* Pods-DogSword.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,9 +119,10 @@
 		9BC71C4D25F67373004A985C /* DogSword */ = {
 			isa = PBXGroup;
 			children = (
+				9BC71CA725F67E23004A985C /* Models */,
+				9BC71C8925F676FE004A985C /* ViewControllers */,
 				9BC71C4E25F67373004A985C /* AppDelegate.swift */,
 				9BC71C5025F67373004A985C /* SceneDelegate.swift */,
-				9BC71C5225F67373004A985C /* ViewController.swift */,
 				9BC71C5425F67373004A985C /* Main.storyboard */,
 				9BC71C5725F67374004A985C /* Assets.xcassets */,
 				9BC71C5925F67374004A985C /* LaunchScreen.storyboard */,
@@ -143,6 +147,23 @@
 				9BC71C7225F67374004A985C /* Info.plist */,
 			);
 			path = DogSwordUITests;
+			sourceTree = "<group>";
+		};
+		9BC71C8925F676FE004A985C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BC71C5225F67373004A985C /* ListViewController.swift */,
+				9BC71C9825F67803004A985C /* SearchViewController.swift */,
+				9BC71C9D25F67884004A985C /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9BC71CA725F67E23004A985C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F34740868A62E5FB3D13F3E6 /* Frameworks */ = {
@@ -327,8 +348,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BC71C5325F67373004A985C /* ViewController.swift in Sources */,
+				9BC71C5325F67373004A985C /* ListViewController.swift in Sources */,
 				9BC71C4F25F67373004A985C /* AppDelegate.swift in Sources */,
+				9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */,
+				9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */,
 				9BC71C5125F67373004A985C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
