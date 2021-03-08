@@ -9,6 +9,10 @@
 import UIKit
 
 class ListViewController: UIViewController {
+  @IBOutlet weak var viewLayoutButton: UIBarButtonItem!
+  @IBOutlet weak var sortButton: UIBarButtonItem!
+  @IBOutlet weak var collectionView: UICollectionView!
+  
   var dogsDataProvider: DogsDataService?
   var breedList: [Breed]?
 

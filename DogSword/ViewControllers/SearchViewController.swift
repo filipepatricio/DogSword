@@ -8,22 +8,59 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+  
+  var searchTimer: Timer?
+  
+  let searchController: UISearchController = {
+    let searchController = UISearchController(searchResultsController: nil)
     
+    searchController.searchBar.placeholder = "Search Breed"
+    searchController.searchBar.searchBarStyle = .minimal
+    searchController.definesPresentationContext = true
+    
+    return searchController
+  }()
+  
+  var dogsDataProvider: DogsDataService?
+  var breedList: [Breed]?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    self.searchController.searchResultsUpdater = self
+    self.navigationItem.searchController = searchController
+    
+    self.dogsDataProvider = DogsDataProvider()
+    // Do any additional setup after loading the view.
+  }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension SearchViewController: UISearchResultsUpdating{
+  func updateSearchResults(for searchController: UISearchController) {
+    //Invalidate and Reinitialise
+    self.searchTimer?.invalidate()
+    
+    guard let breedName = searchController.searchBar.text,
+          breedName != "" else { return }
+    
+    print(breedName)
+    
+    
+    
+    searchTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] (timer) in
+      DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+        //Use search text and perform the query
+        guard let dogsDataProvider = self?.dogsDataProvider else{
+          return
+        }
+        dogsDataProvider.breedSearch(byName: breedName).done{ breedList -> Void in
+          self?.breedList = breedList
+          print(breedList)
+          //TODO: fill breed list into Collection View
+          }.catch{ error in
+            print(error)
+        }
+      }
+    })
+  }
 }

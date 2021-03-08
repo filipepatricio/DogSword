@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,14 +35,45 @@
                     <view key="view" contentMode="scaleToFill" id="N7Q-nc-nVv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k5G-Gx-ZBa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fjW-JQ-ESV">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wrc-L9-OuE">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qeg-Ff-hSY">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7H4-Fx-fVY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7H4-Fx-fVY" firstAttribute="bottom" secondItem="k5G-Gx-ZBa" secondAttribute="bottom" id="33C-7H-CpG"/>
+                            <constraint firstItem="k5G-Gx-ZBa" firstAttribute="leading" secondItem="7H4-Fx-fVY" secondAttribute="leading" id="Cuk-pR-yMx"/>
+                            <constraint firstItem="k5G-Gx-ZBa" firstAttribute="top" secondItem="7H4-Fx-fVY" secondAttribute="top" id="waP-td-djC"/>
+                            <constraint firstItem="7H4-Fx-fVY" firstAttribute="trailing" secondItem="k5G-Gx-ZBa" secondAttribute="trailing" id="xmb-JI-Xfd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="guf-6b-7ez">
                         <barButtonItem key="leftBarButtonItem" title="Grid" id="0cl-gm-SUb"/>
                         <barButtonItem key="rightBarButtonItem" title="Sort" id="zdv-ZZ-XOE"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="k5G-Gx-ZBa" id="Iiw-Bb-Dgf"/>
+                        <outlet property="sortButton" destination="zdv-ZZ-XOE" id="vdv-iG-zBp"/>
+                        <outlet property="viewLayoutButton" destination="0cl-gm-SUb" id="dqm-f0-8Zu"/>
                         <segue destination="wze-VW-wTS" kind="show" id="kh3-MF-gN0"/>
                     </connections>
                 </viewController>
@@ -73,8 +105,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gqm-AW-pz9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="featured" id="DoT-bD-Qgd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yg4-nB-VgK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yg4-nB-VgK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -92,8 +124,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hel-1N-6XY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="mmN-tD-nwv"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GPH-lu-htF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="GPH-lu-htF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -105,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="1325" y="502"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="l3Q-nB-XVd">
             <objects>
                 <viewController id="wze-VW-wTS" customClass="DetailViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="n08-6h-lZ9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dt9-dK-ZRw"/>
+                    <navigationItem key="navigationItem" title="Detail" id="dt9-dK-ZRw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZL-Rd-bAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,7 +155,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kh3-MF-gN0"/>
+        <segue reference="Axc-X6-l52"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
