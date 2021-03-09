@@ -67,11 +67,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="guf-6b-7ez">
-                        <barButtonItem key="leftBarButtonItem" title="Grid" id="0cl-gm-SUb"/>
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="zdv-ZZ-XOE"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sort" id="zdv-ZZ-XOE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Grid" id="0cl-gm-SUb">
+                            <connections>
+                                <action selector="viewLayoutButtonTap:" destination="OYY-Af-DMy" id="uVG-Al-rya"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="k5G-Gx-ZBa" id="Iiw-Bb-Dgf"/>
+                        <outlet property="breedCollectionView" destination="k5G-Gx-ZBa" id="Iiw-Bb-Dgf"/>
                         <outlet property="sortButton" destination="zdv-ZZ-XOE" id="vdv-iG-zBp"/>
                         <outlet property="viewLayoutButton" destination="0cl-gm-SUb" id="dqm-f0-8Zu"/>
                         <segue destination="wze-VW-wTS" kind="show" id="kh3-MF-gN0"/>
@@ -155,7 +159,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Axc-X6-l52"/>
+        <segue reference="kh3-MF-gN0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

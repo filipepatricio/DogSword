@@ -14,12 +14,14 @@ struct Breed: Codable{
   let name: String?
   let origin: String?
   let temperament: String?
+  let image: BreedImage?
   
   enum CodingKeys: String, CodingKey {
     case breedGroup = "breed_group"
     case name = "name"
     case origin = "origin"
     case temperament = "temperament"
+    case image = "image"
   }
   
   init(from decoder: Decoder) throws {
@@ -28,5 +30,6 @@ struct Breed: Codable{
     name = try values.decodeIfPresent(String.self, forKey: .name)
     origin = try values.decodeIfPresent(String.self, forKey: .origin)
     temperament = try values.decodeIfPresent(String.self, forKey: .temperament)
+    image = try values.decodeIfPresent(BreedImage.self, forKey: .image)
   }
 }
