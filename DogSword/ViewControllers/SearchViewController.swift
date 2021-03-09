@@ -78,6 +78,23 @@ extension SearchViewController: UISearchResultsUpdating{
       print(error)
     }
   }
+  
+  // MARK: - Navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let segueIdentifier = segue.identifier else{
+      print("Segue needs segueIdentifier")
+      return
+    }
+    
+    switch segueIdentifier{
+    case SegueIdentifier.search.rawValue:
+      let detailViewController = segue.destination as! DetailViewController
+      detailViewController.breed = sender as? Breed
+      detailViewController.dogsDataProvider = self.dogsDataProvider
+    default:
+      print("Unexpected segue")
+    }
+  }
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
@@ -86,4 +103,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDelega
                       sizeForItemAt indexPath: IndexPath) -> CGSize{
     return CGSize(width: collectionView.bounds.width, height: 100)
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    guard let breedList = self.breedList else{
+      return
+    }
+    self.performSegue(withIdentifier: SegueIdentifier.search.rawValue, sender: breedList[indexPath.row])
+  }
+  
 }

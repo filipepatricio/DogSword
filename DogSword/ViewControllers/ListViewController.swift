@@ -25,7 +25,7 @@ class ListViewController: UIViewController {
   private lazy var listLayout = DisplaySwitchLayout(staticCellHeight: listLayoutStaticCellHeight, nextLayoutStaticCellHeight: gridLayoutStaticCellHeight, layoutState: .list)
   private lazy var gridLayout = DisplaySwitchLayout(staticCellHeight: gridLayoutStaticCellHeight, nextLayoutStaticCellHeight: listLayoutStaticCellHeight, layoutState: .grid)
   private var layoutState: LayoutState = .list
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -41,7 +41,7 @@ class ListViewController: UIViewController {
     self.breedCollectionView.delegate = self
     
     self.breedCollectionView.register(UINib(nibName:"BreedCollectionViewCell", bundle: nil),
-                                 forCellWithReuseIdentifier: "BreedCell")
+                                      forCellWithReuseIdentifier: "BreedCell")
     self.fetchBreeds()
   }
   
@@ -54,8 +54,8 @@ class ListViewController: UIViewController {
       self.breedList = breedList
       breedCollectionViewDataSource.breedList = breedList
       self.breedCollectionView.reloadData()
-      }.catch{ error in
-        print(error)
+    }.catch{ error in
+      print(error)
     }
   }
   
@@ -63,10 +63,10 @@ class ListViewController: UIViewController {
     let animationDuration = 0.2
     let transitionManager: TransitionManager
     if layoutState == .list {
-        layoutState = .grid
+      layoutState = .grid
       transitionManager = TransitionManager(duration: animationDuration, collectionView: breedCollectionView!, destinationLayout: gridLayout, layoutState: layoutState)
     } else {
-        layoutState = .list
+      layoutState = .list
       transitionManager = TransitionManager(duration: animationDuration, collectionView: breedCollectionView!, destinationLayout: listLayout, layoutState: layoutState)
     }
     transitionManager.startInteractiveTransition()
@@ -75,11 +75,36 @@ class ListViewController: UIViewController {
   @IBAction func viewLayoutButtonTap(_ sender: Any) {
     self.listGridSwitch()
   }
+  
+  // MARK: - Navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let segueIdentifier = segue.identifier else{
+      print("Segue needs segueIdentifier")
+      return
+    }
+    
+    switch segueIdentifier{
+    case SegueIdentifier.list.rawValue:
+      let detailViewController = segue.destination as! DetailViewController
+      detailViewController.breed = sender as? Breed
+      detailViewController.dogsDataProvider = self.dogsDataProvider
+    default:
+      print("Unexpected segue")
+    }
+  }
+  
 }
 
 extension ListViewController: UICollectionViewDelegate{
   func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
-      let customTransitionLayout = TransitionLayout(currentLayout: fromLayout, nextLayout: toLayout)
-      return customTransitionLayout
+    let customTransitionLayout = TransitionLayout(currentLayout: fromLayout, nextLayout: toLayout)
+    return customTransitionLayout
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    guard let breedList = self.breedList else{
+      return
+    }
+    self.performSegue(withIdentifier: SegueIdentifier.list.rawValue, sender: breedList[indexPath.row])
   }
 }
