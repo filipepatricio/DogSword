@@ -40,8 +40,8 @@ class BreedCollectionViewDataSource: NSObject, UICollectionViewDataSource{
     
     // Set new values
     cell.breedName = breedList[indexPath.row].name
-    cell.breedOriginLabel.text = breedList[indexPath.row].origin
-    cell.breedGroupLabel.text = breedList[indexPath.row].breedGroup
+    cell.breedOriginLabel.text = "Origin: \(breedList[indexPath.row].origin ?? "Undefined")"
+    cell.breedGroupLabel.text = "Group: \(breedList[indexPath.row].breedGroup ?? "Undefined")"
     
     if let breedImage = breedList[indexPath.row].imageInfo,
        let breedImageUrlString = breedImage.url,
