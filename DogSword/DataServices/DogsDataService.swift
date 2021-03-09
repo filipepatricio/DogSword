@@ -12,6 +12,7 @@ import PromiseKit
 protocol DogsDataService{
   func breedList() -> Promise<[Breed]>
   func breedSearch(byName breedName:String) -> Promise<[Breed]>
+  func breedImage(byId imageId:String)->Promise<BreedImage>
 //  func breedDetail() -> Promise<Breed>
 }
 
@@ -30,7 +31,7 @@ struct DogsDataProvider:DogsDataService{
   
   func breedList()->Promise<[Breed]>{
     return Promise<[Breed]> { seal in
-      _ = AF.request(self.baseUrl + self.apiVersion + "/breeds",
+      _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/breeds",
                      method: .get,
                      headers: headers)
         .responseData { response in
@@ -48,7 +49,7 @@ struct DogsDataProvider:DogsDataService{
   
   func breedSearch(byName breedName:String) -> Promise<[Breed]>{
     return Promise<[Breed]> { seal in
-      _ = AF.request(self.baseUrl + self.apiVersion + "/breeds/search",
+      _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/breeds/search",
                      method: .get,
                      parameters: ["q":breedName],
                      headers: headers)
@@ -57,6 +58,24 @@ struct DogsDataProvider:DogsDataService{
           case .success(let value):
             let breedList = try! JSONDecoder().decode([Breed].self, from: value)
             seal.fulfill(breedList)
+          case .failure(let error):
+            print (error)
+            seal.reject(error)
+          }
+        }
+    }
+  }
+  
+  func breedImage(byId imageId:String) -> Promise<BreedImage>{
+    return Promise<BreedImage> { seal in
+      _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/images/\(imageId)",
+                     method: .get,
+                     headers: headers)
+        .responseData { response in
+          switch (response.result) {
+          case .success(let value):
+            let breedImage = try! JSONDecoder().decode(BreedImage.self, from: value)
+            seal.fulfill(breedImage)
           case .failure(let error):
             print (error)
             seal.reject(error)

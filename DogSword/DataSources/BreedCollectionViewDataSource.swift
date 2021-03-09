@@ -8,9 +8,21 @@
 import UIKit
 import AlamofireImage
 
+enum BreedDataSourceType{
+  case list
+  case search
+}
+
 class BreedCollectionViewDataSource: NSObject, UICollectionViewDataSource{
   
   var breedList: [Breed] = []
+  var breedDataSourceType: BreedDataSourceType
+  var dogsDataProvider: DogsDataService
+  
+  init(breedDataSourceType: BreedDataSourceType, dogsDataProvider: DogsDataService){
+    self.breedDataSourceType = breedDataSourceType
+    self.dogsDataProvider = dogsDataProvider
+  }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return breedList.count
@@ -18,17 +30,34 @@ class BreedCollectionViewDataSource: NSObject, UICollectionViewDataSource{
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BreedCell", for: indexPath) as! BreedCollectionViewCell
-    cell.breedNameLabel.text = breedList[indexPath.row].name
-    cell.breedImageView.image = nil
     
-    if let breedImage = breedList[indexPath.row].image,
+    
+    cell.breedGroupLabel.isHidden = breedDataSourceType == .list
+    cell.breedOriginLabel.isHidden = breedDataSourceType == .list
+    
+    // Reset cell image on reusing cells
+    cell.breedImageView.image = UIImage(named: "dog")
+    
+    // Set new values
+    cell.breedName = breedList[indexPath.row].name
+    cell.breedOriginLabel.text = breedList[indexPath.row].origin
+    cell.breedGroupLabel.text = breedList[indexPath.row].breedGroup
+    
+    if let breedImage = breedList[indexPath.row].imageInfo,
        let breedImageUrlString = breedImage.url,
-       let url = URL(string: breedImageUrlString){
-      cell.breedImageView.af.setImage(withURL: url)
+       let imageUrl = URL(string: breedImageUrlString){
+        cell.breedImageView.af.setImage(withURL: imageUrl)
+    }else if let breedImageId = breedList[indexPath.row].imageId{
+      self.dogsDataProvider.breedImage(byId: breedImageId).done{ imageInfo in
+        if let breedImageUrlString = imageInfo.url,
+           let imageUrl = URL(string: breedImageUrlString){
+          cell.breedImageView.af.setImage(withURL: imageUrl)
+        }
+      }.catch{ error in
+        print(error)
+      }
     }
     
     return cell
   }
-  
-
 }

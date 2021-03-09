@@ -202,10 +202,18 @@
 		9BC71CDE25F79CA4004A985C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9BC71D0825F7C117004A985C /* BreedListCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9BC71D0825F7C117004A985C /* BreedListCell */ = {
+			isa = PBXGroup;
+			children = (
 				9BC71CDF25F79CB9004A985C /* BreedCollectionViewCell.swift */,
 				9BC71CE025F79CB9004A985C /* BreedCollectionViewCell.xib */,
 			);
-			path = Views;
+			path = BreedListCell;
 			sourceTree = "<group>";
 		};
 		F34740868A62E5FB3D13F3E6 /* Frameworks */ = {

@@ -46,10 +46,10 @@ extension AlamofireExtension where ExtendedType: UIImage {
     /// - returns: An initialized `UIImage` object, or `nil` if the method failed.
     public static func threadSafeImage(with data: Data) -> UIImage? {
         lock.lock()
-        let image = UIImage(data: data)
+        let imageInfo = UIImage(data: data)
         lock.unlock()
 
-        return image
+        return imageInfo
     }
 
     /// Initializes and returns the image object with the specified data and scale in a thread-safe manner.
@@ -66,10 +66,10 @@ extension AlamofireExtension where ExtendedType: UIImage {
     /// - returns: An initialized `UIImage` object, or `nil` if the method failed.
     public static func threadSafeImage(with data: Data, scale: CGFloat) -> UIImage? {
         lock.lock()
-        let image = UIImage(data: data, scale: scale)
+        let imageInfo = UIImage(data: data, scale: scale)
         lock.unlock()
 
-        return image
+        return imageInfo
     }
 }
 
@@ -357,13 +357,13 @@ extension AlamofireExtension where ExtendedType: UIImage {
     ///
     /// - Returns: A new image object, or `nil` if the filter failed for any reason.
     public func imageFiltered(withCoreImageFilter name: String, parameters: [String: Any]? = nil) -> UIImage? {
-        var image: CoreImage.CIImage? = type.ciImage
+        var imageInfo: CoreImage.CIImage? = type.ciImage
 
-        if image == nil, let CGImage = type.cgImage {
-            image = CoreImage.CIImage(cgImage: CGImage)
+        if imageInfo == nil, let CGImage = type.cgImage {
+            imageInfo = CoreImage.CIImage(cgImage: CGImage)
         }
 
-        guard let coreImage = image else { return nil }
+        guard let coreImage = imageInfo else { return nil }
 
         let context = CIContext(options: [.priorityRequestLow: true])
 

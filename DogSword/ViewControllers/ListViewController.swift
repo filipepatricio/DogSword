@@ -16,37 +16,43 @@ class ListViewController: UIViewController {
   
   var dogsDataProvider: DogsDataService?
   var breedList: [Breed]?
-  let breedCollectionViewDataSource = BreedCollectionViewDataSource()
+  
+  var breedCollectionViewDataSource: BreedCollectionViewDataSource?
   
   let listLayoutStaticCellHeight: CGFloat = 100.0
-  let gridLayoutStaticCellHeight: CGFloat = 100.0
+  let gridLayoutStaticCellHeight: CGFloat = 150.0
   
   private lazy var listLayout = DisplaySwitchLayout(staticCellHeight: listLayoutStaticCellHeight, nextLayoutStaticCellHeight: gridLayoutStaticCellHeight, layoutState: .list)
-
   private lazy var gridLayout = DisplaySwitchLayout(staticCellHeight: gridLayoutStaticCellHeight, nextLayoutStaticCellHeight: listLayoutStaticCellHeight, layoutState: .grid)
-  
   private var layoutState: LayoutState = .list
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.dogsDataProvider = DogsDataProvider()
-    
     guard let dogsDataProvider = self.dogsDataProvider else{
       return
     }
     
-    self.breedCollectionView.collectionViewLayout = listLayout
+    self.breedCollectionViewDataSource =  BreedCollectionViewDataSource(breedDataSourceType: .list, dogsDataProvider: dogsDataProvider)
+    
+    self.breedCollectionView.collectionViewLayout = self.listLayout
     self.breedCollectionView.dataSource = self.breedCollectionViewDataSource
     self.breedCollectionView.delegate = self
     
     self.breedCollectionView.register(UINib(nibName:"BreedCollectionViewCell", bundle: nil),
                                  forCellWithReuseIdentifier: "BreedCell")
-    
+    self.fetchBreeds()
+  }
+  
+  func fetchBreeds(){
+    guard let dogsDataProvider = self.dogsDataProvider,
+          let breedCollectionViewDataSource = self.breedCollectionViewDataSource else{
+      return
+    }
     dogsDataProvider.breedList().done{ breedList -> Void in
       self.breedList = breedList
-      print(breedList)
-      self.breedCollectionViewDataSource.breedList = breedList
+      breedCollectionViewDataSource.breedList = breedList
       self.breedCollectionView.reloadData()
       }.catch{ error in
         print(error)
@@ -77,4 +83,3 @@ extension ListViewController: UICollectionViewDelegate{
       return customTransitionLayout
   }
 }
-

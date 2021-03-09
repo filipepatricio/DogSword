@@ -10,18 +10,20 @@ import Foundation
 
 struct Breed: Codable{
 
-  let breedGroup: String?
   let name: String?
+  let breedGroup: String?
   let origin: String?
   let temperament: String?
-  let image: BreedImage?
+  let imageInfo: BreedImage?
+  let imageId: String?
   
   enum CodingKeys: String, CodingKey {
     case breedGroup = "breed_group"
     case name = "name"
     case origin = "origin"
     case temperament = "temperament"
-    case image = "image"
+    case imageInfo = "image"
+    case imageId = "reference_image_id"
   }
   
   init(from decoder: Decoder) throws {
@@ -30,6 +32,7 @@ struct Breed: Codable{
     name = try values.decodeIfPresent(String.self, forKey: .name)
     origin = try values.decodeIfPresent(String.self, forKey: .origin)
     temperament = try values.decodeIfPresent(String.self, forKey: .temperament)
-    image = try values.decodeIfPresent(BreedImage.self, forKey: .image)
+    imageInfo = try values.decodeIfPresent(BreedImage.self, forKey: .imageInfo)
+    imageId = try values.decodeIfPresent(String.self, forKey: .imageId)
   }
 }
