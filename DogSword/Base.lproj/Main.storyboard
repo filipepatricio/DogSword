@@ -26,6 +26,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="vbh-t5-HNW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WRn-fh-ryi">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -49,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="si2-8W-0jz"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="vbh-t5-HNW" id="7Jz-Vx-i9T"/>
                         <outlet property="breedCollectionView" destination="i5t-cs-Rve" id="bRK-Jl-f3D"/>
                         <segue destination="wze-VW-wTS" kind="show" identifier="SearchSegue" id="Axc-X6-l52"/>
                     </connections>
@@ -74,6 +79,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="HAx-ZE-aEn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wrc-L9-OuE">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -104,6 +113,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="HAx-ZE-aEn" id="fMn-aW-yce"/>
                         <outlet property="breedCollectionView" destination="k5G-Gx-ZBa" id="Iiw-Bb-Dgf"/>
                         <outlet property="sortButton" destination="zdv-ZZ-XOE" id="vdv-iG-zBp"/>
                         <outlet property="viewLayoutButton" destination="0cl-gm-SUb" id="dqm-f0-8Zu"/>
@@ -240,7 +250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kh3-MF-gN0"/>
+        <segue reference="Axc-X6-l52"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dog" width="512" height="512"/>

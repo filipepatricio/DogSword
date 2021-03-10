@@ -8,11 +8,13 @@
 
 import UIKit
 import DisplaySwitcher
+import Toaster
 
 class ListViewController: UIViewController {
   @IBOutlet weak var viewLayoutButton: UIBarButtonItem!
   @IBOutlet weak var sortButton: UIBarButtonItem!
   @IBOutlet weak var breedCollectionView: UICollectionView!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   var dogsDataProvider: DogsDataService?
   var breedList: [Breed] = []
@@ -53,13 +55,17 @@ class ListViewController: UIViewController {
           let breedCollectionViewDataSource = self.breedCollectionViewDataSource else{
       return
     }
+    self.activityIndicator.startAnimating()
     dogsDataProvider.breedList(page: nextBreedPage, limit: BREED_LIMIT).done{ newBreedList -> Void in
       self.breedList.append(contentsOf: newBreedList)
       breedCollectionViewDataSource.breedList = self.breedList
       self.breedCollectionView.reloadData()
       self.nextBreedPage += 1
     }.catch{ error in
-      print(error)
+      print(error.localizedDescription)
+      Toast(text: error.localizedDescription).show()
+    }.finally {
+      self.activityIndicator.stopAnimating()
     }
   }
   

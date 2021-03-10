@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Toaster
 
 class SearchViewController: UIViewController {
   
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var breedCollectionView: UICollectionView!
   
   var breedCollectionViewDataSource: BreedCollectionViewDataSource?
@@ -55,8 +57,11 @@ extension SearchViewController: UISearchResultsUpdating{
     self.searchTimer?.invalidate()
     
     guard let breedName = searchController.searchBar.text,
-          breedName != "" else { return }
-    
+          breedName != "" else {
+      self.activityIndicator.stopAnimating()
+      return
+    }
+    self.activityIndicator.startAnimating()
     searchTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] (timer) in
       DispatchQueue.global(qos: .userInteractive).async { [weak self] in
         self?.searchBreed(byName: breedName)
@@ -75,7 +80,10 @@ extension SearchViewController: UISearchResultsUpdating{
       breedCollectionViewDataSource.breedList = breedList
       self.breedCollectionView.reloadData()
     }.catch{ error in
-      print(error)
+      print(error.localizedDescription)
+      Toast(text: error.localizedDescription).show()
+    }.finally {
+      self.activityIndicator.stopAnimating()
     }
   }
   

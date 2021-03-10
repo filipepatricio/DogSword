@@ -4,4 +4,5 @@ target 'DogSword' do
   pod 'AlamofireImage', '~> 4.1'
   pod 'PromiseKit', '~> 6.8'
   pod 'DisplaySwitcher', '~> 2.0'
+  pod 'Toaster'
 end
