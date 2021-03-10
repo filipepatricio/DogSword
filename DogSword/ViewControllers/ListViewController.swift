@@ -15,12 +15,15 @@ class ListViewController: UIViewController {
   @IBOutlet weak var breedCollectionView: UICollectionView!
   
   var dogsDataProvider: DogsDataService?
-  var breedList: [Breed]?
+  var breedList: [Breed] = []
   
   var breedCollectionViewDataSource: BreedCollectionViewDataSource?
   
   let listLayoutStaticCellHeight: CGFloat = 100.0
   let gridLayoutStaticCellHeight: CGFloat = 150.0
+  
+  let BREED_LIMIT = 10
+  var nextBreedPage = 0
   
   private lazy var listLayout = DisplaySwitchLayout(staticCellHeight: listLayoutStaticCellHeight, nextLayoutStaticCellHeight: gridLayoutStaticCellHeight, layoutState: .list)
   private lazy var gridLayout = DisplaySwitchLayout(staticCellHeight: gridLayoutStaticCellHeight, nextLayoutStaticCellHeight: listLayoutStaticCellHeight, layoutState: .grid)
@@ -42,18 +45,19 @@ class ListViewController: UIViewController {
     
     self.breedCollectionView.register(UINib(nibName:"BreedCollectionViewCell", bundle: nil),
                                       forCellWithReuseIdentifier: "BreedCell")
-    self.fetchBreeds()
+    self.fetchBreeds(page: self.nextBreedPage)
   }
   
-  func fetchBreeds(){
+  func fetchBreeds(page: Int){
     guard let dogsDataProvider = self.dogsDataProvider,
           let breedCollectionViewDataSource = self.breedCollectionViewDataSource else{
       return
     }
-    dogsDataProvider.breedList().done{ breedList -> Void in
-      self.breedList = breedList
-      breedCollectionViewDataSource.breedList = breedList
+    dogsDataProvider.breedList(page: nextBreedPage, limit: BREED_LIMIT).done{ newBreedList -> Void in
+      self.breedList.append(contentsOf: newBreedList)
+      breedCollectionViewDataSource.breedList = self.breedList
       self.breedCollectionView.reloadData()
+      self.nextBreedPage += 1
     }.catch{ error in
       print(error)
     }
@@ -70,7 +74,7 @@ class ListViewController: UIViewController {
       transitionManager = TransitionManager(duration: animationDuration, collectionView: breedCollectionView!, destinationLayout: listLayout, layoutState: layoutState)
     }
     transitionManager.startInteractiveTransition()
-    viewLayoutButton.title = layoutState == .list ? "List" : "Grid"
+    viewLayoutButton.title = layoutState == .list ? "Grid" : "List"
   }
   @IBAction func viewLayoutButtonTap(_ sender: Any) {
     self.listGridSwitch()
@@ -102,9 +106,12 @@ extension ListViewController: UICollectionViewDelegate{
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-    guard let breedList = self.breedList else{
-      return
-    }
-    self.performSegue(withIdentifier: SegueIdentifier.list.rawValue, sender: breedList[indexPath.row])
+    self.performSegue(withIdentifier: SegueIdentifier.list.rawValue, sender: self.breedList[indexPath.row])
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+      if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
+        self.fetchBreeds(page: self.nextBreedPage)
+      }
   }
 }

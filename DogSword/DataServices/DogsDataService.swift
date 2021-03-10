@@ -10,7 +10,7 @@ import Alamofire
 import PromiseKit
 
 protocol DogsDataService{
-  func breedList() -> Promise<[Breed]>
+  func breedList(page: Int?, limit: Int?) -> Promise<[Breed]>
   func breedSearch(byName breedName:String) -> Promise<[Breed]>
   func breedImage(byId imageId:String)->Promise<BreedImage>
 //  func breedDetail() -> Promise<Breed>
@@ -29,10 +29,19 @@ struct DogsDataProvider:DogsDataService{
     ]
   }
   
-  func breedList()->Promise<[Breed]>{
+  func breedList(page: Int? = nil, limit: Int? = nil)->Promise<[Breed]>{
+    var parameters:[String:Any] = [:]
+    if let page = page,
+       let limit = limit{
+      parameters = [
+        "page":page,
+        "limit":limit
+      ]
+    }
     return Promise<[Breed]> { seal in
       _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/breeds",
                      method: .get,
+                     parameters: parameters,
                      headers: headers)
         .responseData { response in
           switch (response.result) {
