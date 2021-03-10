@@ -25,6 +25,7 @@
 		9BC71CE225F79CB9004A985C /* BreedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC71CE025F79CB9004A985C /* BreedCollectionViewCell.xib */; };
 		9BC71CF225F7A336004A985C /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71CF125F7A336004A985C /* BreedImage.swift */; };
 		9BC71D2F25F7EF76004A985C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D2E25F7EF76004A985C /* Constants.swift */; };
+		9BC71D4A25F93F1E004A985C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D4925F93F1E004A985C /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		9BC71CE025F79CB9004A985C /* BreedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedCollectionViewCell.xib; sourceTree = "<group>"; };
 		9BC71CF125F7A336004A985C /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
 		9BC71D2E25F7EF76004A985C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9BC71D4925F93F1E004A985C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		9BC71C4D25F67373004A985C /* DogSword */ = {
 			isa = PBXGroup;
 			children = (
+				9BC71D3C25F9381A004A985C /* API */,
 				9BC71CDE25F79CA4004A985C /* Views */,
 				9BC71CD525F79715004A985C /* DataSources */,
 				9BC71CAB25F67ED1004A985C /* DataServices */,
@@ -217,6 +220,14 @@
 				9BC71CE025F79CB9004A985C /* BreedCollectionViewCell.xib */,
 			);
 			path = BreedListCell;
+			sourceTree = "<group>";
+		};
+		9BC71D3C25F9381A004A985C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9BC71D4925F93F1E004A985C /* APIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		F34740868A62E5FB3D13F3E6 /* Frameworks */ = {
@@ -402,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC71D4A25F93F1E004A985C /* APIManager.swift in Sources */,
 				9BC71C5325F67373004A985C /* ListViewController.swift in Sources */,
 				9BC71D2F25F7EF76004A985C /* Constants.swift in Sources */,
 				9BC71CC125F6821C004A985C /* Breed.swift in Sources */,

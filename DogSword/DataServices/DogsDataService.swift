@@ -20,6 +20,7 @@ struct DogsDataProvider:DogsDataService{
   let baseUrl: String!
   let apiVersion: String!
   let headers: HTTPHeaders!
+  let apiSessionManager = APIManager.shared.sessionManager
   
   init(){
     self.baseUrl = "https://api.thedogapi.com"
@@ -39,17 +40,17 @@ struct DogsDataProvider:DogsDataService{
       ]
     }
     return Promise<[Breed]> { seal in
-      _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/breeds",
+      _ = apiSessionManager.request("\(self.baseUrl!)\(self.apiVersion!)/breeds",
                      method: .get,
                      parameters: parameters,
                      headers: headers)
+        .validate(statusCode: 200..<300)
         .responseData { response in
           switch (response.result) {
           case .success(let value):
             let breedList = try! JSONDecoder().decode([Breed].self, from: value)
             seal.fulfill(breedList)
           case .failure(let error):
-            print (error)
             seal.reject(error)
           }
         }
@@ -58,17 +59,17 @@ struct DogsDataProvider:DogsDataService{
   
   func breedSearch(byName breedName:String) -> Promise<[Breed]>{
     return Promise<[Breed]> { seal in
-      _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/breeds/search",
+      _ = apiSessionManager.request("\(self.baseUrl!)\(self.apiVersion!)/breeds/search",
                      method: .get,
                      parameters: ["q":breedName],
                      headers: headers)
+        .validate(statusCode: 200..<300)
         .responseData { response in
           switch (response.result) {
           case .success(let value):
             let breedList = try! JSONDecoder().decode([Breed].self, from: value)
             seal.fulfill(breedList)
           case .failure(let error):
-            print (error)
             seal.reject(error)
           }
         }
@@ -77,7 +78,7 @@ struct DogsDataProvider:DogsDataService{
   
   func breedImage(byId imageId:String) -> Promise<BreedImage>{
     return Promise<BreedImage> { seal in
-      _ = AF.request("\(self.baseUrl!)\(self.apiVersion!)/images/\(imageId)",
+      _ = apiSessionManager.request("\(self.baseUrl!)\(self.apiVersion!)/images/\(imageId)",
                      method: .get,
                      headers: headers)
         .responseData { response in
