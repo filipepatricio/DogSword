@@ -12,7 +12,7 @@
         <!--Search-->
         <scene sceneID="TB3-BA-VxT">
             <objects>
-                <viewController id="Jnm-US-S5g" customClass="SearchViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="Jnm-US-S5g" customClass="SearchViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i6C-5n-OaH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--List-->
         <scene sceneID="QHg-Qh-r91">
             <objects>
-                <viewController id="OYY-Af-DMy" customClass="ListViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="OYY-Af-DMy" customClass="ListViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N7Q-nc-nVv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +183,7 @@
         <!--Detail-->
         <scene sceneID="l3Q-nB-XVd">
             <objects>
-                <viewController id="wze-VW-wTS" customClass="DetailViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="wze-VW-wTS" customClass="DetailViewController" customModule="DogSword" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Blr-Vj-lpW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

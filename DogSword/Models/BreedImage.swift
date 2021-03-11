@@ -9,11 +9,12 @@ import Foundation
 
 struct BreedImage: Codable{
   
-  let url: String?
+  var url: String?
   
   enum CodingKeys: String, CodingKey {
     case url = "url"
   }
+  init() {}
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)

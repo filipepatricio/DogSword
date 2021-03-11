@@ -18,24 +18,27 @@ class DetailViewController: UIViewController {
   var dogsDataProvider: DogsDataService?
   var breed: Breed?
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.fillBreedInfo(self.breed, self.dogsDataProvider)
+  }
+  
+  func fillBreedInfo(_ breed: Breed?, _ dogsDataProvider: DogsDataService?) {
     
-    guard let dogsDataProvider = self.dogsDataProvider,
-      let breed = self.breed else{
+    guard let dogsDataProvider = dogsDataProvider,
+      let breed = breed else{
       return
     }
     
     self.breedNameLabel.text = "Name: \(breed.name ?? "Undefined")"
-    self.breedOriginLabel.text = "Original: \(breed.origin ?? "Undefined")"
+    self.breedOriginLabel.text = "Origin: \(breed.origin ?? "Undefined")"
     self.breedCategoryLabel.text = "Group: \(breed.breedGroup ?? "Undefined")"
     self.breedTemperamentLabel.text = "Temperament: \(breed.temperament ?? "Undefined")"
     
     if let breedImage = breed.imageInfo,
        let breedImageUrlString = breedImage.url,
        let imageUrl = URL(string: breedImageUrlString){
-        self.breedImageView.af.setImage(withURL: imageUrl)
+      self.breedImageView.af.setImage(withURL: imageUrl)
     }else if let breedImageId = breed.imageId{
       dogsDataProvider.breedImage(byId: breedImageId).done{ imageInfo in
         if let breedImageUrlString = imageInfo.url,
@@ -46,6 +49,6 @@ class DetailViewController: UIViewController {
         print(error)
       }
     }
-    
   }
+  
 }

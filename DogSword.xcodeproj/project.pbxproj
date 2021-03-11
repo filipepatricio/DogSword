@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31167118E96FC25CC6729FE8 /* Pods_DogSword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332E9193AAB57F07BC0D3B8A /* Pods_DogSword.framework */; };
+		9BC354E525FA7C2A007EF072 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC354E425FA7C2A007EF072 /* DetailViewControllerTests.swift */; };
+		9BC354F025FA8BD0007EF072 /* MockDogsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC354EF25FA8BD0007EF072 /* MockDogsDataService.swift */; };
 		9BC71C4F25F67373004A985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C4E25F67373004A985C /* AppDelegate.swift */; };
 		9BC71C5125F67373004A985C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C5025F67373004A985C /* SceneDelegate.swift */; };
 		9BC71C5325F67373004A985C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C5225F67373004A985C /* ListViewController.swift */; };
@@ -15,7 +17,6 @@
 		9BC71C5825F67374004A985C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC71C5725F67374004A985C /* Assets.xcassets */; };
 		9BC71C5B25F67374004A985C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC71C5925F67374004A985C /* LaunchScreen.storyboard */; };
 		9BC71C6625F67374004A985C /* DogSwordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C6525F67374004A985C /* DogSwordTests.swift */; };
-		9BC71C7125F67374004A985C /* DogSwordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C7025F67374004A985C /* DogSwordUITests.swift */; };
 		9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C9825F67803004A985C /* SearchViewController.swift */; };
 		9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C9D25F67884004A985C /* DetailViewController.swift */; };
 		9BC71CAD25F67F4A004A985C /* DogsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71CAC25F67F4A004A985C /* DogsDataService.swift */; };
@@ -27,17 +28,11 @@
 		9BC71D2F25F7EF76004A985C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D2E25F7EF76004A985C /* Constants.swift */; };
 		9BC71D4A25F93F1E004A985C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D4925F93F1E004A985C /* APIManager.swift */; };
 		9BC71D5525FA721F004A985C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D5425FA721F004A985C /* APIRouter.swift */; };
+		EACE9D926D09CB9E8BCB3AF8 /* Pods_DogSwordTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436DA149F32CD81BB5297EFF /* Pods_DogSwordTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		9BC71C6225F67374004A985C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9BC71C4325F67373004A985C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9BC71C4A25F67373004A985C;
-			remoteInfo = DogSword;
-		};
-		9BC71C6D25F67374004A985C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9BC71C4325F67373004A985C /* Project object */;
 			proxyType = 1;
@@ -49,7 +44,16 @@
 /* Begin PBXFileReference section */
 		332E9193AAB57F07BC0D3B8A /* Pods_DogSword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3553AC0CCFBEB055964903AA /* Pods-DogSword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSword.debug.xcconfig"; path = "Target Support Files/Pods-DogSword/Pods-DogSword.debug.xcconfig"; sourceTree = "<group>"; };
+		41BEFA599B45E0BB11BEE6A8 /* Pods-DogSwordTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSwordTests.debug.xcconfig"; path = "Target Support Files/Pods-DogSwordTests/Pods-DogSwordTests.debug.xcconfig"; sourceTree = "<group>"; };
+		436DA149F32CD81BB5297EFF /* Pods_DogSwordTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogSwordTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C72C562E0DB484FB0B466A /* Pods-DogSword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSword.release.xcconfig"; path = "Target Support Files/Pods-DogSword/Pods-DogSword.release.xcconfig"; sourceTree = "<group>"; };
+		9B91A00125FA94B100DA98E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B91A00325FA94B100DA98E8 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B91A00525FA94B100DA98E8 /* DisplaySwitcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DisplaySwitcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B91A00725FA94B100DA98E8 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B91A00925FA94B100DA98E8 /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BC354E425FA7C2A007EF072 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		9BC354EF25FA8BD0007EF072 /* MockDogsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDogsDataService.swift; sourceTree = "<group>"; };
 		9BC71C4B25F67373004A985C /* DogSword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogSword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC71C4E25F67373004A985C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC71C5025F67373004A985C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +65,6 @@
 		9BC71C6125F67374004A985C /* DogSwordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogSwordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC71C6525F67374004A985C /* DogSwordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwordTests.swift; sourceTree = "<group>"; };
 		9BC71C6725F67374004A985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BC71C6C25F67374004A985C /* DogSwordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogSwordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BC71C7025F67374004A985C /* DogSwordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwordUITests.swift; sourceTree = "<group>"; };
-		9BC71C7225F67374004A985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BC71C9825F67803004A985C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9BC71C9D25F67884004A985C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9BC71CAC25F67F4A004A985C /* DogsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsDataService.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		9BC71D2E25F7EF76004A985C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BC71D4925F93F1E004A985C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9BC71D5425FA721F004A985C /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		A46FFF42581A426D2D8116CC /* Pods-DogSwordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogSwordTests.release.xcconfig"; path = "Target Support Files/Pods-DogSwordTests/Pods-DogSwordTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,13 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BC71C6925F67374004A985C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				EACE9D926D09CB9E8BCB3AF8 /* Pods_DogSwordTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +104,26 @@
 			children = (
 				3553AC0CCFBEB055964903AA /* Pods-DogSword.debug.xcconfig */,
 				86C72C562E0DB484FB0B466A /* Pods-DogSword.release.xcconfig */,
+				41BEFA599B45E0BB11BEE6A8 /* Pods-DogSwordTests.debug.xcconfig */,
+				A46FFF42581A426D2D8116CC /* Pods-DogSwordTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9BC354E325FA7BFE007EF072 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BC354E425FA7C2A007EF072 /* DetailViewControllerTests.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9BC354EE25FA8B78007EF072 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				9BC354EF25FA8BD0007EF072 /* MockDogsDataService.swift */,
+			);
+			path = DataServices;
 			sourceTree = "<group>";
 		};
 		9BC71C4225F67373004A985C = {
@@ -117,7 +131,6 @@
 			children = (
 				9BC71C4D25F67373004A985C /* DogSword */,
 				9BC71C6425F67374004A985C /* DogSwordTests */,
-				9BC71C6F25F67374004A985C /* DogSwordUITests */,
 				9BC71C4C25F67373004A985C /* Products */,
 				5D596F8E3B3F948588512875 /* Pods */,
 				F34740868A62E5FB3D13F3E6 /* Frameworks */,
@@ -129,7 +142,6 @@
 			children = (
 				9BC71C4B25F67373004A985C /* DogSword.app */,
 				9BC71C6125F67374004A985C /* DogSwordTests.xctest */,
-				9BC71C6C25F67374004A985C /* DogSwordUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,19 +168,12 @@
 		9BC71C6425F67374004A985C /* DogSwordTests */ = {
 			isa = PBXGroup;
 			children = (
+				9BC354EE25FA8B78007EF072 /* DataServices */,
+				9BC354E325FA7BFE007EF072 /* ViewControllers */,
 				9BC71C6525F67374004A985C /* DogSwordTests.swift */,
 				9BC71C6725F67374004A985C /* Info.plist */,
 			);
 			path = DogSwordTests;
-			sourceTree = "<group>";
-		};
-		9BC71C6F25F67374004A985C /* DogSwordUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9BC71C7025F67374004A985C /* DogSwordUITests.swift */,
-				9BC71C7225F67374004A985C /* Info.plist */,
-			);
-			path = DogSwordUITests;
 			sourceTree = "<group>";
 		};
 		9BC71C8925F676FE004A985C /* ViewControllers */ = {
@@ -236,7 +241,13 @@
 		F34740868A62E5FB3D13F3E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B91A00125FA94B100DA98E8 /* Alamofire.framework */,
+				9B91A00325FA94B100DA98E8 /* AlamofireImage.framework */,
+				9B91A00525FA94B100DA98E8 /* DisplaySwitcher.framework */,
+				9B91A00725FA94B100DA98E8 /* PromiseKit.framework */,
+				9B91A00925FA94B100DA98E8 /* Toaster.framework */,
 				332E9193AAB57F07BC0D3B8A /* Pods_DogSword.framework */,
+				436DA149F32CD81BB5297EFF /* Pods_DogSwordTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BC71C7825F67374004A985C /* Build configuration list for PBXNativeTarget "DogSwordTests" */;
 			buildPhases = (
+				9F3803B9837BE266753997FC /* [CP] Check Pods Manifest.lock */,
 				9BC71C5D25F67374004A985C /* Sources */,
 				9BC71C5E25F67374004A985C /* Frameworks */,
 				9BC71C5F25F67374004A985C /* Resources */,
+				0315F7896816BDE6EFFD97B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,24 +293,6 @@
 			productName = DogSwordTests;
 			productReference = 9BC71C6125F67374004A985C /* DogSwordTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		9BC71C6B25F67374004A985C /* DogSwordUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9BC71C7B25F67374004A985C /* Build configuration list for PBXNativeTarget "DogSwordUITests" */;
-			buildPhases = (
-				9BC71C6825F67374004A985C /* Sources */,
-				9BC71C6925F67374004A985C /* Frameworks */,
-				9BC71C6A25F67374004A985C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9BC71C6E25F67374004A985C /* PBXTargetDependency */,
-			);
-			name = DogSwordUITests;
-			productName = DogSwordUITests;
-			productReference = 9BC71C6C25F67374004A985C /* DogSwordUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -312,10 +307,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					9BC71C6025F67374004A985C = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 9BC71C4A25F67373004A985C;
-					};
-					9BC71C6B25F67374004A985C = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 9BC71C4A25F67373004A985C;
 					};
@@ -336,7 +327,6 @@
 			targets = (
 				9BC71C4A25F67373004A985C /* DogSword */,
 				9BC71C6025F67374004A985C /* DogSwordTests */,
-				9BC71C6B25F67374004A985C /* DogSwordUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -360,16 +350,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BC71C6A25F67374004A985C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0315F7896816BDE6EFFD97B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSwordTests/Pods-DogSwordTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogSwordTests/Pods-DogSwordTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSwordTests/Pods-DogSwordTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		48C96007204D977CA8FB955C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +385,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogSword/Pods-DogSword-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F3803B9837BE266753997FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogSwordTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF356CC97F0B286A84455958 /* [CP] Check Pods Manifest.lock */ = {
@@ -437,14 +459,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC71C6625F67374004A985C /* DogSwordTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BC71C6825F67374004A985C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9BC71C7125F67374004A985C /* DogSwordUITests.swift in Sources */,
+				9BC354E525FA7C2A007EF072 /* DetailViewControllerTests.swift in Sources */,
+				9BC354F025FA8BD0007EF072 /* MockDogsDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,11 +471,6 @@
 			isa = PBXTargetDependency;
 			target = 9BC71C4A25F67373004A985C /* DogSword */;
 			targetProxy = 9BC71C6225F67374004A985C /* PBXContainerItemProxy */;
-		};
-		9BC71C6E25F67374004A985C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9BC71C4A25F67373004A985C /* DogSword */;
-			targetProxy = 9BC71C6D25F67374004A985C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -641,6 +652,7 @@
 		};
 		9BC71C7925F67374004A985C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41BEFA599B45E0BB11BEE6A8 /* Pods-DogSwordTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -663,6 +675,7 @@
 		};
 		9BC71C7A25F67374004A985C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A46FFF42581A426D2D8116CC /* Pods-DogSwordTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -680,46 +693,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogSword.app/DogSword";
-			};
-			name = Release;
-		};
-		9BC71C7C25F67374004A985C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J6G54HL593;
-				INFOPLIST_FILE = DogSwordUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.DogSwordUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DogSword;
-			};
-			name = Debug;
-		};
-		9BC71C7D25F67374004A985C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J6G54HL593;
-				INFOPLIST_FILE = DogSwordUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.DogSwordUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DogSword;
 			};
 			name = Release;
 		};
@@ -749,15 +722,6 @@
 			buildConfigurations = (
 				9BC71C7925F67374004A985C /* Debug */,
 				9BC71C7A25F67374004A985C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9BC71C7B25F67374004A985C /* Build configuration list for PBXNativeTarget "DogSwordUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9BC71C7C25F67374004A985C /* Debug */,
-				9BC71C7D25F67374004A985C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

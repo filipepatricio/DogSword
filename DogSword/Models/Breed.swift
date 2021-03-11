@@ -10,12 +10,12 @@ import Foundation
 
 struct Breed: Codable{
 
-  let name: String?
-  let breedGroup: String?
-  let origin: String?
-  let temperament: String?
-  let imageInfo: BreedImage?
-  let imageId: String?
+  var name: String?
+  var breedGroup: String?
+  var origin: String?
+  var temperament: String?
+  var imageInfo: BreedImage?
+  var imageId: String?
   
   enum CodingKeys: String, CodingKey {
     case breedGroup = "breed_group"
@@ -25,6 +25,8 @@ struct Breed: Codable{
     case imageInfo = "image"
     case imageId = "reference_image_id"
   }
+  
+  init(){}
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)

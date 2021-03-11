@@ -31,6 +31,8 @@ class ListViewController: UIViewController {
   private lazy var gridLayout = DisplaySwitchLayout(staticCellHeight: gridLayoutStaticCellHeight, nextLayoutStaticCellHeight: listLayoutStaticCellHeight, layoutState: .grid)
   private var layoutState: LayoutState = .list
   
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
