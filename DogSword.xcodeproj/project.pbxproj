@@ -26,6 +26,7 @@
 		9BC71CF225F7A336004A985C /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71CF125F7A336004A985C /* BreedImage.swift */; };
 		9BC71D2F25F7EF76004A985C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D2E25F7EF76004A985C /* Constants.swift */; };
 		9BC71D4A25F93F1E004A985C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D4925F93F1E004A985C /* APIManager.swift */; };
+		9BC71D5525FA721F004A985C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71D5425FA721F004A985C /* APIRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		9BC71CF125F7A336004A985C /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
 		9BC71D2E25F7EF76004A985C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BC71D4925F93F1E004A985C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9BC71D5425FA721F004A985C /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +137,7 @@
 		9BC71C4D25F67373004A985C /* DogSword */ = {
 			isa = PBXGroup;
 			children = (
-				9BC71D3C25F9381A004A985C /* API */,
+				9BC71D3C25F9381A004A985C /* Networking */,
 				9BC71CDE25F79CA4004A985C /* Views */,
 				9BC71CD525F79715004A985C /* DataSources */,
 				9BC71CAB25F67ED1004A985C /* DataServices */,
@@ -222,12 +224,13 @@
 			path = BreedListCell;
 			sourceTree = "<group>";
 		};
-		9BC71D3C25F9381A004A985C /* API */ = {
+		9BC71D3C25F9381A004A985C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				9BC71D4925F93F1E004A985C /* APIManager.swift */,
+				9BC71D5425FA721F004A985C /* APIRouter.swift */,
 			);
-			path = API;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		F34740868A62E5FB3D13F3E6 /* Frameworks */ = {
@@ -421,6 +424,7 @@
 				9BC71C4F25F67373004A985C /* AppDelegate.swift in Sources */,
 				9BC71CAD25F67F4A004A985C /* DogsDataService.swift in Sources */,
 				9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */,
+				9BC71D5525FA721F004A985C /* APIRouter.swift in Sources */,
 				9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */,
 				9BC71CE125F79CB9004A985C /* BreedCollectionViewCell.swift in Sources */,
 				9BC71C5125F67373004A985C /* SceneDelegate.swift in Sources */,

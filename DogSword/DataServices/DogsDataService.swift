@@ -13,7 +13,6 @@ protocol DogsDataService{
   func breedList(page: Int?, limit: Int?) -> Promise<[Breed]>
   func breedSearch(byName breedName:String) -> Promise<[Breed]>
   func breedImage(byId imageId:String)->Promise<BreedImage>
-//  func breedDetail() -> Promise<Breed>
 }
 
 struct DogsDataProvider:DogsDataService{
@@ -40,10 +39,7 @@ struct DogsDataProvider:DogsDataService{
       ]
     }
     return Promise<[Breed]> { seal in
-      _ = apiSessionManager.request("\(self.baseUrl!)\(self.apiVersion!)/breeds",
-                     method: .get,
-                     parameters: parameters,
-                     headers: headers)
+      _ = apiSessionManager.request(APIRouter.breedList(parameters: parameters))
         .validate(statusCode: 200..<300)
         .responseData { response in
           switch (response.result) {
@@ -58,11 +54,9 @@ struct DogsDataProvider:DogsDataService{
   }
   
   func breedSearch(byName breedName:String) -> Promise<[Breed]>{
+    let parameters = ["q":breedName]
     return Promise<[Breed]> { seal in
-      _ = apiSessionManager.request("\(self.baseUrl!)\(self.apiVersion!)/breeds/search",
-                     method: .get,
-                     parameters: ["q":breedName],
-                     headers: headers)
+      _ = apiSessionManager.request(APIRouter.breedSearch(parameters: parameters))
         .validate(statusCode: 200..<300)
         .responseData { response in
           switch (response.result) {
@@ -78,23 +72,16 @@ struct DogsDataProvider:DogsDataService{
   
   func breedImage(byId imageId:String) -> Promise<BreedImage>{
     return Promise<BreedImage> { seal in
-      _ = apiSessionManager.request("\(self.baseUrl!)\(self.apiVersion!)/images/\(imageId)",
-                     method: .get,
-                     headers: headers)
+      _ = apiSessionManager.request(APIRouter.breedImage(imageId: imageId))
         .responseData { response in
           switch (response.result) {
           case .success(let value):
             let breedImage = try! JSONDecoder().decode(BreedImage.self, from: value)
             seal.fulfill(breedImage)
           case .failure(let error):
-            print (error)
             seal.reject(error)
           }
         }
     }
   }
-  
-//  func breedDetail() -> Promise<Breed>{
-//    //TODO:
-//  }
 }
