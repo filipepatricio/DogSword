@@ -32,7 +32,11 @@ class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.dogsDataProvider = DogsDataProvider()
+    //TODO: Refactor to receive DogsDataProvider from Dependency Injection
+    if self.dogsDataProvider == nil{
+      self.dogsDataProvider = DogsDataProvider()
+    }
+    
     guard let dogsDataProvider = self.dogsDataProvider else{
       return
     }

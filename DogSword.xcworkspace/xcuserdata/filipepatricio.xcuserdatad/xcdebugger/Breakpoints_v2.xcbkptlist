@@ -7,16 +7,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FFC31B68-4D02-4CAB-8851-93CF0A116AFF"
+            uuid = "A316593A-B680-41CC-ADEA-5A2BAC3BCF7C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DogSword/ViewControllers/DetailViewController.swift"
+            filePath = "DogSwordTests/DataServices/MockDogsDataService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "fillBreedInfo(_:_:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "breedList(page:limit:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BF360053-E270-4AAE-A017-CA96CCBF6763"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogSword/DataServices/DogsDataService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "breedList(page:limit:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BF360053-E270-4AAE-A017-CA96CCBF6763 - c0c412dee15a008c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogSword.DogsDataProvider.breedList(page: Swift.Optional&lt;Swift.Int&gt;, limit: Swift.Optional&lt;Swift.Int&gt;) -&gt; PromiseKit.Promise&lt;Swift.Array&lt;DogSword.Breed&gt;&gt;"
+                  moduleName = "DogSword"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/filipepatricio/Documents/iOSProjects/DogSword/DogSword/DataServices/DogsDataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "864">
+               </Location>
+               <Location
+                  uuid = "BF360053-E270-4AAE-A017-CA96CCBF6763 - a37d6bda95399978"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PromiseKit.Resolver&lt;Swift.Array&lt;DogSword.Breed&gt;&gt;) -&gt; () in DogSword.DogsDataProvider.breedList(page: Swift.Optional&lt;Swift.Int&gt;, limit: Swift.Optional&lt;Swift.Int&gt;) -&gt; PromiseKit.Promise&lt;Swift.Array&lt;DogSword.Breed&gt;&gt;"
+                  moduleName = "DogSword"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/filipepatricio/Documents/iOSProjects/DogSword/DogSword/DataServices/DogsDataService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "154">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE5D0013-0C76-4CC8-8409-08CC2E3B0F64"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogSword/ViewControllers/ListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "fetchBreeds(page:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7BF4BA1-23D8-491E-9221-A293F196A641"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogSword/ViewControllers/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "searchBreed(byName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A7BF4BA1-23D8-491E-9221-A293F196A641 - c57f59d5adc6708"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogSword.SearchViewController.searchBreed(byName: Swift.String) -&gt; ()"
+                  moduleName = "DogSword"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/filipepatricio/Documents/iOSProjects/DogSword/DogSword/ViewControllers/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "A7BF4BA1-23D8-491E-9221-A293F196A641 - 3557013c07ecd00d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;DogSword.Breed&gt;) -&gt; () in DogSword.SearchViewController.searchBreed(byName: Swift.String) -&gt; ()"
+                  moduleName = "DogSword"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/filipepatricio/Documents/iOSProjects/DogSword/DogSword/ViewControllers/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "118">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3057FF2-1DB0-4C0A-908F-F34B8B512B1C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogSword/ViewControllers/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "searchBreed(byName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8655475-DC94-4618-A475-1280FA27EE77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogSword/ViewControllers/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "searchBreed(byName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
