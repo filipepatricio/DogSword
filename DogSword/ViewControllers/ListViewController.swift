@@ -10,7 +10,7 @@ import UIKit
 import DisplaySwitcher
 import Toaster
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, DogsDataServiceProtocol {
   @IBOutlet weak var viewLayoutButton: UIBarButtonItem!
   @IBOutlet weak var sortButton: UIBarButtonItem!
   @IBOutlet weak var breedCollectionView: UICollectionView!
@@ -35,11 +35,6 @@ class ListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    //TODO: Refactor to receive DogsDataProvider from Dependency Injection
-    if self.dogsDataProvider == nil{
-      self.dogsDataProvider = DogsDataProvider()
-    }
     
     guard let dogsDataProvider = self.dogsDataProvider else{
       return

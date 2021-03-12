@@ -8,7 +8,7 @@
 import UIKit
 import Toaster
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, DogsDataServiceProtocol {
   
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var breedCollectionView: UICollectionView!
@@ -31,11 +31,6 @@ class SearchViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    //TODO: Refactor to receive DogsDataProvider from Dependency Injection
-    if self.dogsDataProvider == nil{
-      self.dogsDataProvider = DogsDataProvider()
-    }
     
     guard let dogsDataProvider = self.dogsDataProvider else{
       return

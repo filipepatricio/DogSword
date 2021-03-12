@@ -11,6 +11,8 @@
 		9B1B9FD725FAAE4500878122 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B9FD625FAAE4500878122 /* ListViewControllerTests.swift */; };
 		9B1B9FDB25FAAEE300878122 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B9FDA25FAAEE300878122 /* SearchViewControllerTests.swift */; };
 		9B1B9FE025FAB04600878122 /* breed_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B1B9FDF25FAB04600878122 /* breed_list.json */; };
+		9B1B9FE425FB63DD00878122 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B9FE325FB63DD00878122 /* RootTabBarController.swift */; };
+		9B1B9FEA25FB65BB00878122 /* DogsDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B9FE925FB65BB00878122 /* DogsDataServiceProtocol.swift */; };
 		9BC354E525FA7C2A007EF072 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC354E425FA7C2A007EF072 /* DetailViewControllerTests.swift */; };
 		9BC354F025FA8BD0007EF072 /* MockDogsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC354EF25FA8BD0007EF072 /* MockDogsDataService.swift */; };
 		9BC71C4F25F67373004A985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC71C4E25F67373004A985C /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 		9B1B9FD625FAAE4500878122 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
 		9B1B9FDA25FAAEE300878122 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 		9B1B9FDF25FAB04600878122 /* breed_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = breed_list.json; sourceTree = "<group>"; };
+		9B1B9FE325FB63DD00878122 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		9B1B9FE925FB65BB00878122 /* DogsDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsDataServiceProtocol.swift; sourceTree = "<group>"; };
 		9B91A00125FA94B100DA98E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B91A00325FA94B100DA98E8 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B91A00525FA94B100DA98E8 /* DisplaySwitcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DisplaySwitcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +176,7 @@
 				9BC71CA725F67E23004A985C /* Models */,
 				9BC71C8925F676FE004A985C /* ViewControllers */,
 				9BC71C5025F67373004A985C /* SceneDelegate.swift */,
+				9BC71C4E25F67373004A985C /* AppDelegate.swift */,
 				9BC71C5425F67373004A985C /* Main.storyboard */,
 				9BC71C5725F67374004A985C /* Assets.xcassets */,
 				9BC71C5925F67374004A985C /* LaunchScreen.storyboard */,
@@ -199,7 +204,7 @@
 				9BC71C5225F67373004A985C /* ListViewController.swift */,
 				9BC71C9825F67803004A985C /* SearchViewController.swift */,
 				9BC71C9D25F67884004A985C /* DetailViewController.swift */,
-				9BC71C4E25F67373004A985C /* AppDelegate.swift */,
+				9B1B9FE325FB63DD00878122 /* RootTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			children = (
 				9BC71CC025F6821C004A985C /* Breed.swift */,
 				9BC71CF125F7A336004A985C /* BreedImage.swift */,
+				9B1B9FE925FB65BB00878122 /* DogsDataServiceProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC71D4A25F93F1E004A985C /* APIManager.swift in Sources */,
+				9B1B9FE425FB63DD00878122 /* RootTabBarController.swift in Sources */,
 				9BC71C5325F67373004A985C /* ListViewController.swift in Sources */,
 				9BC71D2F25F7EF76004A985C /* Constants.swift in Sources */,
 				9BC71CC125F6821C004A985C /* Breed.swift in Sources */,
@@ -466,6 +473,7 @@
 				9BC71C9E25F67884004A985C /* DetailViewController.swift in Sources */,
 				9BC71D5525FA721F004A985C /* APIRouter.swift in Sources */,
 				9BC71C9925F67803004A985C /* SearchViewController.swift in Sources */,
+				9B1B9FEA25FB65BB00878122 /* DogsDataServiceProtocol.swift in Sources */,
 				9BC71CE125F79CB9004A985C /* BreedCollectionViewCell.swift in Sources */,
 				9BC71C5125F67373004A985C /* SceneDelegate.swift in Sources */,
 				9BC71CF225F7A336004A985C /* BreedImage.swift in Sources */,

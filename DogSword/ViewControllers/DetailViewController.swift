@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, DogsDataServiceProtocol {
   
   @IBOutlet weak var breedImageView: UIImageView!
   @IBOutlet weak var breedNameLabel: UILabel!
