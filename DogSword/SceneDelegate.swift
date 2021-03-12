@@ -18,9 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let dogsDataProvider = DogsDataProvider()
     rootTabBarController.dogsDataProvider = dogsDataProvider
+
     
     let window = UIWindow(windowScene: scene as! UIWindowScene)
-    window.rootViewController = UINavigationController(rootViewController: rootTabBarController)
+    window.rootViewController = rootTabBarController
     window.makeKeyAndVisible()
     
     self.window = window
